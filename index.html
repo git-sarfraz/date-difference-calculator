@@ -35,10 +35,10 @@
         var date1 = new Date(document.getElementById("date1").value);
         var date2 = new Date(document.getElementById("date2").value);
         var Diff = Math.abs(date2.getTime() - date1.getTime());
-        var Days = Math.floor(Diff / (1000 * 3600 * 24)); 
+        var Days = Math.floor(Diff / (1000 * 60 * 60 * 24)); 
         var year = Math.floor(Days / 365);
-        var hour = Math.floor(Diff/(1000*3600));
-        var Minute = Math.ceil(Diff/(1000*3600)*60 );
+        var hour = Math.floor(Diff/(1000*60 * 60));
+        var Minute = Math.ceil(Diff/(1000*60 * 60)*60 );
         var sec = Math.ceil(Minute * 60 );
         document.getElementById("output").innerHTML = "The difference between the two Selected dates is " + year + " years / " + Days + " days / "+ hour + " Hours /"+ Minute + " Minutes /"+ sec + " Seconds /";
        }
